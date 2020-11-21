@@ -1,0 +1,45 @@
+﻿@page "/navigate"
+@using Microsoft.AspNetCore.WebUtilities
+@inject NavigationManager NavigationManager
+
+<h1>Navigate in Code Example</h1>
+
+<h1>Query string parse example</h1>
+
+<p>Value: @queryValue</p>
+
+<button class="btn btn-primary" @onclick="NavigateToCounterComponent">
+    Navigate to the Counter component
+</button>
+
+@code {
+
+private string queryValue = "Not set";
+
+    private void NavigateToCounterComponent()
+    {
+        NavigationManager.NavigateTo("counter");
+    }
+
+protected override void OnInitialized()
+{
+    NavigationManager.LocationChanged += HandleLocationChanged;
+
+var query = new Uri(NavigationManager.Uri).Query;
+
+        if (QueryHelpers.ParseQuery(query).TryGetValue("{KEY}", out var value))
+        {
+            queryValue = value;
+        }
+}
+
+private void HandleLocationChanged(object sender, LocationChangedEventArgs e)
+{
+    Console.WriteLine("ss");
+}
+
+public void Dispose()
+{
+    NavigationManager.LocationChanged -= HandleLocationChanged;
+}
+}
