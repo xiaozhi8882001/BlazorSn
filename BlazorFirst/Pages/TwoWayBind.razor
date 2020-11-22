@@ -1,0 +1,11 @@
+﻿@page "/two-way-binding"
+
+<label>Name = @Name</label>
+
+<input @bind="@Name" />
+
+<input @bind-value=Name @bind-value:event="oninput" />
+
+@functions {
+    string Name = "";
+}

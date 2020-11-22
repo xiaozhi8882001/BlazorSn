@@ -1,0 +1,75 @@
+﻿@page "/and-demo/ant-button"
+
+<div>
+    <div id="flex-demo"> 
+        <Row Justify="space-around">
+            <Col Span="4">
+            <div>
+                <Button Type="primary" Block>Primary</Button>
+                <Button Block>Default</Button>
+                <Button Type="dashed" Block>Dashed</Button>
+                <Button Type="link" Block>Link</Button>
+            </div>
+            <Divider Orientation="left" Style="font-weight:bold">Block 按钮</Divider>
+            block属性将使按钮适合其父宽度。
+
+            </Col>
+            <Col Span="4">
+            <div>
+                <Button Type="primary">Primary</Button>
+                <Button>Default</Button>
+                <Button Type="dashed">Dashed</Button>
+                <Button Type="link">Link</Button>
+            </div>
+            <Divider Orientation="left" Style="font-weight:bold">按钮类型</Divider>
+            按钮有四种类型：主按钮、次按钮、虚线按钮和链接按钮。主按钮在同一个操作区域最多出现一次。
+
+            </Col>
+
+            <Col Span="4">
+            <div>
+                <Tooltip Title=@("search")>
+                    <Button Type="primary" Shape="circle" Icon="search" />
+                </Tooltip>
+                <Button Type="primary" Shape="circle">
+                    A
+                </Button>
+                <Button Type="primary" Icon="search">
+                    Search
+                </Button>
+                <Tooltip Title=@("search")>
+                    <Button Shape="circle" Icon="search" />
+                </Tooltip>
+                <Button Icon="search">Search</Button>
+                <br />
+                <Tooltip Title=@("search")>
+                    <Button Shape="circle" Icon="search" />
+                </Tooltip>
+                <Button Icon="search">Search</Button>
+                <Tooltip Title=@("search")>
+                    <Button Type="dashed" Shape="circle" Icon="search" />
+                </Tooltip>
+                <Button Type="dashed" Icon="search">
+                    Search
+                </Button>
+            </div>
+            <Divider Orientation="left" Style="font-weight:bold">图标按钮</Divider>
+            当需要在 Button 内嵌入 Icon 时，可以设置 icon 属性，或者直接在 Button 内使用 Icon 组件。
+            如果想控制 Icon 具体的位置，只能直接使用 Icon 组件，而非 icon 属性。
+
+            </Col>
+            <Col Span="4">
+
+            </Col>
+        </Row>
+
+    </div>
+
+    <style>
+        #flex-demo .ant-row {
+            background-color: rgba(128, 128, 128, 0.08);
+        }
+    </style>
+
+</div>
+

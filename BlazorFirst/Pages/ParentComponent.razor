@@ -1,0 +1,22 @@
+﻿@page "/parent-child"
+
+<h3> 父组件</h3>
+<p>父组件中的字符串: @parentString</p>
+<button @onclick="PassToChild">向子组件传值</button>
+
+<ChildComponent ToChild=@parentString
+                FromChild=@ReceivedFromChild>
+</ChildComponent>
+
+@functions{
+    private string parentString = "父组件中初始化的字符串";
+    private void PassToChild()
+    {
+        parentString += "- 向子组件传值";
+    }
+    private void ReceivedFromChild(string str)
+    {
+        parentString = str;
+        StateHasChanged();
+    }
+}

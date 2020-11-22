@@ -1,34 +1,20 @@
 ﻿@page "/todo"
 
-<h3>待办列表 (@todos.Count(todo=>!todo.IsDone))</h3>
+<h3>待办列表 (@todos.Count(todo => !todo.IsDone))</h3>
 
 <ul>
-    <li>
-        @newTodo
-    </li>
     @foreach (var todo in todos)
     {
-    <li>
-        <input type="checkbox" @bind="todo.IsDone" />
-        <input @bind="todo.Title" />
-    </li>
+        <li>
+            <input type="checkbox" @bind="todo.IsDone" />
+            <input @bind="todo.Title" />
+        </li>
     }
 </ul>
 
-<input placeholder="要做的一些事情……" @bind="newTodo" />
+<!--@bind 双向绑定，但输入框的双向绑定，值的变化默认在离开输入框时（即onchange事件），如果要看到实时效果，就需要指定细一些，指定作用于值变化对应的事件-->
+@*<input placeholder="要做的一些事情(双向绑定,系统默认onchange)……" @bind=newTodo />*@
+<input placeholder="要做的一些事情……" @bind-value=newTodo @bind-value:event="oninput" />
 <button @onclick="AddTodo">添加到待办</button>
-
-@code {
-    private IList<TodoList.TodoItem> todos = new List<TodoList.TodoItem>();
-[Parameter]
-public string newTodo {get;set;}
-
-    private void AddTodo()
-    {
-        if (!string.IsNullOrEmpty(newTodo))
-        {
-            todos.Add(new TodoList.TodoItem { Title = newTodo });
-            newTodo = string.Empty;
-        }
-    }
-}
+<br />
+@newTodo
