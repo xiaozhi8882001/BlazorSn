@@ -11,11 +11,34 @@
     <link href="BlazorFirst.styles.css" rel="stylesheet" />
 
     <link href="_content/AntDesign/css/ant-design-blazor.css" rel="stylesheet" />
-    <script src="_content/AntDesign/js/ant-design-blazor.js"></script>
+
+    <style>
+        .loader {
+            /* animation-name:load; */
+            animation: load 2s linear infinite;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #2e8e9a;
+            height: 100px;
+            width: 100px;
+            margin: 0 auto;
+        }
+
+        @keyframes load {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div id="app">Loading...</div>
+    <div id="app">加载中……<div class="loader"></div></div>
+
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
@@ -23,6 +46,8 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_content/AntDesign/js/ant-design-blazor.js"></script>
+
 </body>
 
 </html>
