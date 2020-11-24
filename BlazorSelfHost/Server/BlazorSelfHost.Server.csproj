@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>3a75675e-01d1-44f2-a5db-4ac62edc829f</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BlazorFirst\BlazorFirst.csproj" />
+    <ProjectReference Include="..\Shared\BlazorSelfHost.Shared.csproj" />
+  </ItemGroup>
+
+
+</Project>

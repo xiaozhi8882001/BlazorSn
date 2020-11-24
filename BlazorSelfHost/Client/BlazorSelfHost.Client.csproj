@@ -4,18 +4,15 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Custom' ">
-    <ExternalConsole>true</ExternalConsole>
-  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AntDesign" Version="0.4.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.0" PrivateAssets="all" />
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
   </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\BlazorSelfHost\Shared\BlazorSelfHost.Shared.csproj" />
+    <ProjectReference Include="..\Shared\BlazorSelfHost.Shared.csproj" />
   </ItemGroup>
 
 </Project>
