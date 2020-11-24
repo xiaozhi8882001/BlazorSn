@@ -15,7 +15,7 @@
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BlazorSelfHost\Shared\BlazorSelfHost.Shared.csproj" />
+    <ProjectReference Include="..\Shared\BlazorSelfHost.Shared.csproj" />
   </ItemGroup>
 
 </Project>
